@@ -15,7 +15,7 @@ const LandingSection = () => (
     isDarkBackground
     backgroundColor="#2A4365"
   >
-    <Avatar src='https://i.pravatar.cc/150?img=7'/>
+    <Avatar size='xl' src='https://i.pravatar.cc/150?img=7'/>
     
     <Text fontWeight="bold" paddingBottom={5}>{greeting}</Text>
     <Text fontSize={32} fontWeight="bold">{bio1}</Text>
