@@ -12,7 +12,7 @@ import { Box, HStack } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: jake.schroder@gmialcom",
+    url: "mailto: jake.schroder@gmailcom",
   },
   {
     icon: faGithub,
