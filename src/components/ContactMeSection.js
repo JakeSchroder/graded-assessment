@@ -21,13 +21,12 @@ import {useAlertContext} from "../context/alertContext";
 const LandingSection = () => {
   const {isLoading, response, submit} = useSubmit();
   const { onOpen } = useAlertContext();
-
+  
   const formik = useFormik({
     initialValues: {firstName:'', email:'', type:'hireMe'| 'openSource'|'other', comment:''},
-    onSubmit: (values) => {
-      submit('https://sdfasd.com', values)
-      onOpen(response.type, response.message)
-      console.log(response)
+    onSubmit: async (values) => {
+      await submit('', values)
+      await onOpen(response.type, response.message)
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -105,7 +104,7 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading} onClick={()=>{formik.handleSubmit(); if(response.type === 'success')formik.resetForm()}}>
+              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading} onClick={()=>{formik.handleSubmit(); if(response.type === 'success') formik.resetForm()}}>
                 Submit
               </Button>
             </VStack>
